@@ -10,10 +10,23 @@
   box-shadow: 1px 1px 2px 0 #d0d0d0;
   background: #fff;
   border: 1px solid #ccc;
-  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
+}
+
+body {
+  background: url('/assets/wall4.png');
+  /* Verdana-based sans serif stack */
+  font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+
+}
+
+.navbar.navbar-inverse {
+  background: url('/assets/hexabump.png');
+  border-radius: 0;
+  box-shadow: 3px 3px 5px #464747;
 }
