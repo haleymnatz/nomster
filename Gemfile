@@ -49,3 +49,6 @@ gem 'will_paginate', '~> 3.1.1'
 # Simple Form
 gem 'simple_form'
 
+# User Authentication and Security
+gem 'devise', '>=3.2.4'
+
