@@ -5,3 +5,12 @@
     <p><%= place.description %></p><br />
   </div>
 <% end %>
+
+<div class="digg_pagination col-xs-4 col-xs-offset-4">
+  <div class="page_info">
+    <%= page_entries_info @places %>
+  </div>
+  <div class="paginate-yield">
+  <%= will_paginate @places, :container => true %>
+  </div>
+</div>

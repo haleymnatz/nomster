@@ -18,6 +18,10 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
+h1 {
+  margin-bottom: 5px;
+}
+
 body {
   background: url('/assets/wall4.png');
   /* Verdana-based sans serif stack */
@@ -35,4 +39,22 @@ body {
   color: #62D5F5;
   font-family: 'bubblegum_sansregular', sans-serif;
   font-size: 26px;
+}
+
+.digg_pagination {
+  text-align: center;
+  font-size: 16px;
+}
+
+.paginate-yield {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.paginate-yield a {
+ }
+
+.page_info {
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
