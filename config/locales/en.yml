@@ -21,3 +21,11 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    models:
+      place:
+        zero: places
+        one:   place
+        other: places
+
+  
