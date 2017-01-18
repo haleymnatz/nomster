@@ -1,5 +1,5 @@
 <% @places.each do |place| %>
-  <div class="booyah-box col-xs-10 col-xs-offset-1">
+  <div class="booyah-box col-xs-8 col-xs-offset-2">
     <h1><%= link_to place.name, place_path(place) %></h1>
     <i><%= place.address %></i><br /><br />
     <p><%= place.description %></p><br />
@@ -9,7 +9,7 @@
     <% end %>
 
     <% if place.comments.present? %>
-      <div class="col-xs-12">
+      <div>
         <blockquote>
           <% if place.comments.last.humanized_rating.present? %>
             <b><%= place.comments.last.humanized_rating %></b> -
@@ -19,6 +19,16 @@
         </blockquote>
       </div>
     <% end %> 
+
+    <% if place.photos.present? %>
+      <div>
+      <%= image_tag place.photos.last.picture, class: 'img-responsive' %>
+      <% if place.photos.last.caption.present? %>
+        <%= place.photos.last.caption %>
+      <% end %>
+      </div>
+    <% end %>
+
   </div>
 <% end %>
  
