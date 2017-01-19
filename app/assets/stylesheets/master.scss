@@ -94,7 +94,7 @@ blockquote p {
   display: inline;
 }
 
-.booyah-box img {
+.carousel-inner img {
   width: 40%;
   height: auto;
   display: inline;
@@ -118,4 +118,9 @@ blockquote p {
 
 .carousel {
   box-shadow: 0px 3px 8px #2a2a2a;
+}
+
+.member-info h1 {
+  font-size: 4vw;
+  word-wrap: break-word;
 }
