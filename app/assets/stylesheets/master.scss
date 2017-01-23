@@ -10,7 +10,8 @@
   box-shadow: 1px 1px 2px 0 #d0d0d0;
   background: #fff;
   border: 1px solid #ccc;
-  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  /*border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;*/
+  border-color: #696968;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -23,7 +24,9 @@ h1 {
 }
 
 body {
-  background: url('/assets/wall4.png');
+  background: url('/assets/dust.png');
+  /*background-color: #2e96db;*/
+  background-color: #91c5ed;
   /* Verdana-based sans serif stack */
   font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 
@@ -95,8 +98,8 @@ blockquote p {
 }
 
 .carousel-inner img {
-  width: 40%;
-  height: auto;
+  /*width: 40%;*/
+  max-height: 550px;
   display: inline;
 }
 .carousel-inner > .item > img, .carousel-inner > .item > a > img {
@@ -118,9 +121,25 @@ blockquote p {
 
 .carousel {
   box-shadow: 0px 3px 8px #2a2a2a;
+  overflow: hidden;
 }
 
 .member-info h1 {
   font-size: 4vw;
   word-wrap: break-word;
+}
+
+.carousel {
+  background-image: url('/assets/wall4.png');
+}
+
+.thumbnail {
+  display: inline-block;
+  margin: 0 auto;
+  float: none;
+}
+
+.center-text {
+  text-align: center;
+  font-size: 20px;
 }

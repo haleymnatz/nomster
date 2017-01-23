@@ -1,8 +1,8 @@
 <div class="booyah-box col-xs-8 col-xs-offset-2">
   <h1><%= @place.name %></h1>
-  <i><%= @place.address %></i>
+  <h3><i><%= @place.address %></i></h3>
   <br/> <br/>
-  <p><%= @place.description %></p>
+  <h3><%= @place.description %></h3>
 
 <br/>
 
@@ -43,7 +43,7 @@
 <br/>
 <br/>
 
-  <!-- Photos show -->
+<!-- Photos show -->
   <div class="clear"></div>
   <div>
   <h1 class="pull-left">Photos</h1>
@@ -53,17 +53,23 @@
     </button>
     <div class="clear"></div>
     <% @place.photos.each do |photo| %>
-      <%= image_tag photo.picture, class: 'img-responsive' %>
-      <% if photo.caption.present? %>
-        <%= photo.caption %>
-      <% end %>     
+      <br/><br/><br/>
+      <div class="thumbnail">
+        <%= image_tag photo.picture %>
+        <div class="caption center-text">
+          <% if photo.caption.present? %>
+            <%= photo.caption %>
+          <% end %> 
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
 
+<div class="clear"></div>
 <br/>
 <br/>
-
+<br/>
 <div class="clear"></div>
 
 

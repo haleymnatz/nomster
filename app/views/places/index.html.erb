@@ -18,7 +18,7 @@
     <div class="item">
       <%= image_tag 'slider2.jpg', class: 'img-responsive', alt: 'Mother and son laughing while son eats ice cream cone' %>
       <div class="carousel-caption">
-        Grab a treat with your favorite people
+        Share a sundae with your favorite people
       </div>
     </div>
     <div class="item">
@@ -30,7 +30,7 @@
     <div class="item">
       <%= image_tag 'slider5.jpg', class: 'img-responsive', alt: 'Ice cream sundae with bananas and a cookie in a red bowl' %>
       <div class="carousel-caption">
-        
+        Treat yourself!
       </div>
     </div>
   </div>
@@ -49,11 +49,19 @@
 <% @places.each do |place| %>
   <div class="booyah-box col-xs-8 col-xs-offset-2">
     <h1><%= link_to place.name, place_path(place) %></h1>
-    <i><%= place.address %></i><br /><br />
-    <p><%= place.description %></p><br />
+    <h4><i><%= place.address %></i></h4><br /><br />
+    <h4><%= place.description %></h4><br />
 
-    <% if place.user.present? %>
-      <small><%= place.user.email %></small>
+
+    <% if place.photos.present? %>
+      <div class="thumbnail"> 
+        <%= image_tag place.photos.last.picture %>
+        <div class="caption center-text">
+          <% if place.photos.last.caption.present? %>
+            <%= place.photos.last.caption %>
+          <% end %>
+        </div>
+      </div>
     <% end %>
 
     <% if place.comments.present? %>
@@ -68,13 +76,8 @@
       </div>
     <% end %> 
 
-    <% if place.photos.present? %>
-      <div>
-      <%= image_tag place.photos.last.picture, class: 'img-responsive' %>
-      <% if place.photos.last.caption.present? %>
-        <%= place.photos.last.caption %>
-      <% end %>
-      </div>
+    <% if place.user.present? %>
+      <small><%= place.user.email %></small>
     <% end %>
 
   </div>
@@ -90,3 +93,36 @@
   </div>
 </div>
 
+
+
+<script>
+function carouselNormalization() {
+var items = $('#carousel-example-generic .item'), //grab all slides
+    heights = [], //create empty array to store height values
+    tallest; //create variable to make note of the tallest slide
+
+if (items.length) {
+    function normalizeHeights() {
+        items.each(function() { //add heights to array
+            heights.push($(this).height()); 
+        });
+        tallest = Math.max.apply(null, heights); //cache largest value
+        items.each(function() {
+            $(this).css('min-height',tallest + 'px');
+        });
+    };
+    normalizeHeights();
+
+    $(window).on('resize orientationchange', function () {
+        tallest = 0, heights.length = 0; //reset vars
+        items.each(function() {
+            $(this).css('min-height','0'); //reset min-height
+        }); 
+        normalizeHeights(); //run it again 
+    });
+}
+}
+
+carouselNormalization()
+
+</script>
