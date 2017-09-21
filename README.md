@@ -23,7 +23,7 @@ A Yelp clone for ice cream shops that integrates with the Google Maps API. [Chec
 
 View contributed ice cream shops, comments and ratings.
 
-Create an account to add new places. Places that include an address will generate a Google Map view.
+Create an account to add new places. Places that include an address will generate a Google Maps view.
 
 Use your account to add comments to other users' places or rate them.
 
